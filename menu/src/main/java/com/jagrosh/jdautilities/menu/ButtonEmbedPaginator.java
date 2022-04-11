@@ -34,7 +34,6 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -234,9 +233,7 @@ public class ButtonEmbedPaginator extends Menu {
         }
 
         int n = newPageNum;
-        event.deferEdit().queue(interactionHook -> {
-            message.editMessage(renderPage(n)).setActionRow(buildButtons()).queue(m -> pagination(m, n));
-        });
+        event.deferEdit().queue(interactionHook -> message.editMessage(renderPage(n)).setActionRow(buildButtons()).queue(m -> pagination(m, n)));
     }
 
     private Message renderPage(int pageNum) {
@@ -259,7 +256,7 @@ public class ButtonEmbedPaginator extends Menu {
         private boolean wrapPageEnds = false;
         private ButtonStyle style = ButtonStyle.SECONDARY;
 
-        private final List<MessageEmbed> embeds = new LinkedList<>();
+        private final List<MessageEmbed> embeds = new ArrayList<>();
 
         /**
          * Builds the {@link ButtonEmbedPaginator} with this Builder.

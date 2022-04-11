@@ -16,7 +16,7 @@
 package com.jagrosh.jdautilities.menu;
 
 import java.awt.Color;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -112,36 +112,34 @@ public class ButtonMenu extends Menu
                 else
                 {
                     // This is the last reaction added.
-                    r.queue(v -> {
-                        waiter.waitForEvent(MessageReactionAddEvent.class, event -> {
-                            // If the message is not the same as the ButtonMenu
-                            // currently being displayed.
-                            if(!event.getMessageId().equals(m.getId()))
-                                return false;
+                    r.queue(v -> waiter.waitForEvent(MessageReactionAddEvent.class, event -> {
+                        // If the message is not the same as the ButtonMenu
+                        // currently being displayed.
+                        if(!event.getMessageId().equals(m.getId()))
+                            return false;
 
-                            // If the reaction is an Emote we get the Snowflake,
-                            // otherwise we get the unicode value.
-                            String re = event.getReaction().getReactionEmote().isEmote()
-                                ? event.getReaction().getReactionEmote().getId()
-                                : event.getReaction().getReactionEmote().getName();
+                        // If the reaction is an Emote we get the Snowflake,
+                        // otherwise we get the unicode value.
+                        String re = event.getReaction().getReactionEmote().isEmote()
+                            ? event.getReaction().getReactionEmote().getId()
+                            : event.getReaction().getReactionEmote().getName();
 
-                            // If the value we got is not registered as a button to
-                            // the ButtonMenu being displayed we return false.
-                            if(!choices.contains(re))
-                                return false;
+                        // If the value we got is not registered as a button to
+                        // the ButtonMenu being displayed we return false.
+                        if(!choices.contains(re))
+                            return false;
 
-                            // Last check is that the person who added the reaction
-                            // is a valid user.
-                            return isValidUser(event.getUser(), event.isFromGuild() ? event.getGuild() : null);
-                        }, (MessageReactionAddEvent event) -> {
-                            // What happens next is after a valid event
-                            // is fired and processed above.
+                        // Last check is that the person who added the reaction
+                        // is a valid user.
+                        return isValidUser(event.getUser(), event.isFromGuild() ? event.getGuild() : null);
+                    }, (MessageReactionAddEvent event) -> {
+                        // What happens next is after a valid event
+                        // is fired and processed above.
 
-                            // Preform the specified action with the ReactionEmote
-                            action.accept(event.getReaction().getReactionEmote());
-                            finalAction.accept(m);
-                        }, timeout, unit, () -> finalAction.accept(m));
-                    });
+                        // Preform the specified action with the ReactionEmote
+                        action.accept(event.getReaction().getReactionEmote());
+                        finalAction.accept(m);
+                    }, timeout, unit, () -> finalAction.accept(m)));
                 }
             }
         });
@@ -169,7 +167,7 @@ public class ButtonMenu extends Menu
         private Color color;
         private String text;
         private String description;
-        private final List<String> choices = new LinkedList<>();
+        private final List<String> choices = new ArrayList<>();
         private Consumer<ReactionEmote> action;
         private Consumer<Message> finalAction = (m) -> {};
 

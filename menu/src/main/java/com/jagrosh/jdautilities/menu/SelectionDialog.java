@@ -17,7 +17,7 @@ package com.jagrosh.jdautilities.menu;
 
 import java.awt.Color;
 import java.util.Arrays;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -249,7 +249,7 @@ public class SelectionDialog extends Menu
      */
     public static class Builder extends Menu.Builder<Builder, SelectionDialog>
     {
-        private final List<String> choices = new LinkedList<>();
+        private final List<String> choices = new ArrayList<>();
         private String leftEnd = "";
         private String rightEnd  = "";
         private String defaultLeft = "";

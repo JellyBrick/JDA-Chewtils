@@ -17,7 +17,7 @@ package com.jagrosh.jdautilities.menu;
 
 import java.awt.Color;
 import java.util.Arrays;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -234,9 +234,9 @@ public class Slideshow extends Menu
                 int pages = urls.size();
                 final int targetPage;
 
-                if(leftText != null && rawContent.equalsIgnoreCase(leftText) && (1 < pageNum || wrapPageEnds))
+                if(rawContent.equalsIgnoreCase(leftText) && (1 < pageNum || wrapPageEnds))
                     targetPage = pageNum - 1 < 1 && wrapPageEnds? pages : pageNum - 1;
-                else if(rightText != null && rawContent.equalsIgnoreCase(rightText) && (pageNum < pages || wrapPageEnds))
+                else if(rawContent.equalsIgnoreCase(rightText) && (pageNum < pages || wrapPageEnds))
                     targetPage = pageNum + 1 > pages && wrapPageEnds? 1 : pageNum + 1;
                 else
                 {
@@ -371,7 +371,7 @@ public class Slideshow extends Menu
         private String textToRight = null;
         private boolean allowTextInput = false;
 
-        private final List<String> strings = new LinkedList<>();
+        private final List<String> strings = new ArrayList<>();
 
         /**
          * Builds the {@link com.jagrosh.jdautilities.menu.Slideshow Slideshow}
