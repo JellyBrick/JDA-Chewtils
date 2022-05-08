@@ -169,6 +169,9 @@ public abstract class MessageContextMenu extends ContextMenu
         // Make the command data
         CommandData data = Commands.message(getName());
         data.setDefaultEnabled(isDefaultEnabled());
+        if (this.userPermissions != null && this.userPermissions.length > 0)
+            data.setDefaultPermissions(this.userPermissions);
+        data.setCommandEnabledInDMs(!this.guildOnly);
 
         return data;
     }

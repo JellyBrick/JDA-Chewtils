@@ -206,6 +206,9 @@ public abstract class UserContextMenu extends ContextMenu
         // Make the command data
         CommandData data = Commands.user(getName());
         data.setDefaultEnabled(isDefaultEnabled());
+        data.setCommandEnabledInDMs(!this.guildOnly);
+        if (this.userPermissions != null && this.userPermissions.length > 0)
+            data.setDefaultPermissions(this.userPermissions);
 
         return data;
     }
