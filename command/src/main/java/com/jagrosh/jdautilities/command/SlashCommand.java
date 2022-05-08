@@ -22,6 +22,7 @@ import net.dv8tion.jda.api.entities.ChannelType;
 import net.dv8tion.jda.api.entities.GuildVoiceState;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.events.interaction.command.CommandAutoCompleteInteractionEvent;
+import net.dv8tion.jda.api.interactions.commands.CommandPermission;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
@@ -548,10 +549,11 @@ public abstract class SlashCommand extends Command
         // Default enabled is synonymous with hidden now.
         data.setDefaultEnabled(isDefaultEnabled());
 
-        if (this.userPermissions != null && this.userPermissions.length > 0)
-            data.setDefaultPermissions(this.userPermissions);
+        if (this.userPermissions != null && this.userPermissions.length > 0) {
+            data.setDefaultPermissions(CommandPermission.enabledFor(this.userPermissions));
+        }
 
-        data.setCommandEnabledInDMs(!this.guildOnly);
+        data.setGuildOnly(this.guildOnly);
 
         return data;
     }

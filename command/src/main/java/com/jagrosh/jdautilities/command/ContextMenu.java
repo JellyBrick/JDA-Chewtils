@@ -18,6 +18,7 @@ package com.jagrosh.jdautilities.command;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.events.interaction.command.GenericCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.Command;
+import net.dv8tion.jda.api.interactions.commands.CommandPermission;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.privileges.CommandPrivilege;
@@ -245,8 +246,8 @@ public abstract class ContextMenu extends Interaction
         data.setDefaultEnabled(isDefaultEnabled());
 
         if (this.userPermissions != null && this.userPermissions.length > 0)
-            data.setDefaultPermissions(this.userPermissions);
-        data.setCommandEnabledInDMs(!this.guildOnly);
+            data.setDefaultPermissions(CommandPermission.enabledFor(this.userPermissions));
+        data.setGuildOnly(this.guildOnly);
 
         return data;
     }

@@ -19,6 +19,7 @@ import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.AudioChannel;
 import net.dv8tion.jda.api.entities.GuildVoiceState;
 import net.dv8tion.jda.api.entities.Member;
+import net.dv8tion.jda.api.interactions.commands.CommandPermission;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 
@@ -170,8 +171,8 @@ public abstract class MessageContextMenu extends ContextMenu
         CommandData data = Commands.message(getName());
         data.setDefaultEnabled(isDefaultEnabled());
         if (this.userPermissions != null && this.userPermissions.length > 0)
-            data.setDefaultPermissions(this.userPermissions);
-        data.setCommandEnabledInDMs(!this.guildOnly);
+            data.setDefaultPermissions(CommandPermission.enabledFor(this.userPermissions));
+        data.setGuildOnly(this.guildOnly);
 
         return data;
     }
