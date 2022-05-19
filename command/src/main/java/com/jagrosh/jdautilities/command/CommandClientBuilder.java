@@ -17,6 +17,7 @@ package com.jagrosh.jdautilities.command;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
 
@@ -57,9 +58,9 @@ public class CommandClientBuilder
     private String error;
     private String carbonKey;
     private String botsKey;
-    private final ArrayList<Command> commands = new ArrayList<>();
-    private final ArrayList<SlashCommand> slashCommands = new ArrayList<>();
-    private final ArrayList<ContextMenu> contextMenus = new ArrayList<>();
+    private final List<Command> commands = new ArrayList<>();
+    private final List<SlashCommand> slashCommands = new ArrayList<>();
+    private final List<ContextMenu> contextMenus = new ArrayList<>();
     private String forcedGuildId = null;
     private boolean manualUpsert = false;
     private CommandListener listener;
