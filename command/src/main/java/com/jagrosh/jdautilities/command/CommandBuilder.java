@@ -21,6 +21,7 @@ import net.dv8tion.jda.api.Permission;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
