@@ -21,6 +21,7 @@ import net.dv8tion.jda.api.Permission;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
@@ -50,8 +51,8 @@ public class CommandBuilder
     private int cooldown = 0;
     private Permission[] userPermissions = new Permission[0];
     private Permission[] botPermissions = new Permission[0];
-    private final ArrayList<String> aliases = new ArrayList<>();
-    private final ArrayList<Command> children = new ArrayList<>();
+    private final List<String> aliases = new ArrayList<>();
+    private final List<Command> children = new ArrayList<>();
     private BiConsumer<CommandEvent, Command> helpBiConsumer = null;
     private boolean usesTopicTags = true;
     private CooldownScope cooldownScope = CooldownScope.USER;
