@@ -91,6 +91,12 @@ allprojects {
 
     repositories {
         mavenCentral()
+
+        // jitpack
+        maven {
+            name = 'jitpack'
+            url = 'https://jitpack.io'
+        }
     }
 
     build {
