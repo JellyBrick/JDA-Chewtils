@@ -708,7 +708,7 @@ public class Paginator extends Menu
         /**
          * Sets the {@link com.jagrosh.jdautilities.menu.Paginator Paginator} to traverse
          * left or right when a provided text input is sent in the form of a Message to
-         * the {@link net.dv8tion.jda.api.entities.GuildChannel GuildChannel} the menu is displayed in.
+         * the {@link net.dv8tion.jda.api.entities.channel.middleman.GuildChannel GuildChannel} the menu is displayed in.
          *
          * <p>If one or both these parameters are provided {@code null} this resets
          * both of them and they will no longer be available when the Paginator is built.
