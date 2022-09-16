@@ -66,7 +66,7 @@ public class ButtonMenu extends Menu
 
     /**
      * Shows the ButtonMenu as a new {@link net.dv8tion.jda.api.entities.Message Message}
-     * in the provided {@link net.dv8tion.jda.api.entities.MessageChannel MessageChannel}.
+     * in the provided {@link net.dv8tion.jda.api.entities.channel.middleman.MessageChannel MessageChannel}.
      *
      * @param  channel
      *         The MessageChannel to send the new Message to

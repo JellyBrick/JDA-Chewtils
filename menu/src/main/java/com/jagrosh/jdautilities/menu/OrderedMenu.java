@@ -93,7 +93,7 @@ public class OrderedMenu extends Menu
 
     /**
      * Shows the OrderedMenu as a new {@link net.dv8tion.jda.api.entities.Message Message}
-     * in the provided {@link net.dv8tion.jda.api.entities.MessageChannel MessageChannel}.
+     * in the provided {@link net.dv8tion.jda.api.entities.channel.middleman.MessageChannel MessageChannel}.
      *
      * @param  channel
      *         The MessageChannel to send the new Message to
@@ -101,7 +101,7 @@ public class OrderedMenu extends Menu
      * @throws java.lang.IllegalArgumentException
      *         If <b>all</b> of the following are violated simultaneously:
      *         <ul>
-     *             <li>Being sent to a {@link net.dv8tion.jda.api.entities.TextChannel TextChannel}.</li>
+     *             <li>Being sent to a {@link net.dv8tion.jda.api.entities.channel.concrete.TextChannel TextChannel}.</li>
      *             <li>This OrderedMenu does not allow typed input.</li>
      *             <li>The bot doesn't have {@link net.dv8tion.jda.api.Permission#MESSAGE_ADD_REACTION
      *             Permission.MESSAGE_ADD_REACTION} in the channel this menu is being sent to.</li>
@@ -131,7 +131,7 @@ public class OrderedMenu extends Menu
      * @throws java.lang.IllegalArgumentException
      *         If <b>all</b> of the following are violated simultaneously:
      *         <ul>
-     *             <li>Being sent to a {@link net.dv8tion.jda.api.entities.TextChannel TextChannel}.</li>
+     *             <li>Being sent to a {@link net.dv8tion.jda.api.entities.channel.concrete.TextChannel TextChannel}.</li>
      *             <li>This OrderedMenu does not allow typed input.</li>
      *             <li>The bot doesn't have {@link net.dv8tion.jda.api.Permission#MESSAGE_ADD_REACTION
      *             Permission.MESSAGE_ADD_REACTION} in the channel this menu is being sent to.</li>

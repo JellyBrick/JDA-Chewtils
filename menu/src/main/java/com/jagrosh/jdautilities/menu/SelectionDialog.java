@@ -98,7 +98,7 @@ public class SelectionDialog extends Menu
 
     /**
      * Shows the SelectionDialog as a new {@link net.dv8tion.jda.api.entities.Message Message}
-     * in the provided {@link net.dv8tion.jda.api.entities.MessageChannel MessageChannel}, starting with
+     * in the provided {@link net.dv8tion.jda.api.entities.channel.middleman.MessageChannel MessageChannel}, starting with
      * the first selection.
      *
      * @param  channel
@@ -125,7 +125,7 @@ public class SelectionDialog extends Menu
 
     /**
      * Shows the SelectionDialog as a new {@link net.dv8tion.jda.api.entities.Message Message}
-     * in the provided {@link net.dv8tion.jda.api.entities.MessageChannel MessageChannel}, starting with
+     * in the provided {@link net.dv8tion.jda.api.entities.channel.middleman.MessageChannel MessageChannel}, starting with
      * the number selection provided.
      *
      * @param  channel

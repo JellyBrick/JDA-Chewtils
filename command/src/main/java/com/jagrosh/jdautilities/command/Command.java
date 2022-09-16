@@ -99,7 +99,7 @@ public abstract class Command extends Interaction
 
     /**
      * {@code true} if the command may only be used in an NSFW
-     * {@link net.dv8tion.jda.api.entities.TextChannel TextChannel} or DMs.
+     * {@link net.dv8tion.jda.api.entities.channel.concrete.TextChannel TextChannel} or DMs.
      * {@code false} if it may be used anywhere
      * <br>Default: {@code false}
      */
@@ -339,7 +339,7 @@ public abstract class Command extends Interaction
     }
 
     /**
-     * Checks whether a command is allowed in a {@link net.dv8tion.jda.api.entities.TextChannel TextChannel}
+     * Checks whether a command is allowed in a {@link net.dv8tion.jda.api.entities.channel.concrete.TextChannel TextChannel}
      * by searching the channel topic for topic tags relating to the command.
      *
      * <p>{-{@link com.jagrosh.jdautilities.command.Command#name name}},

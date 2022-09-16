@@ -43,7 +43,7 @@ import net.dv8tion.jda.internal.utils.Checks;
  * development. There are also "extension" methods for all methods found in MessageReceivedEvent.
  * 
  * <p>Methods with "reply" in their name can be used to instantly send a {@link net.dv8tion.jda.api.entities.Message Message}
- * response to the {@link net.dv8tion.jda.api.entities.MessageChannel MessageChannel} the MessageReceivedEvent was in.
+ * response to the {@link net.dv8tion.jda.api.entities.channel.middleman.MessageChannel MessageChannel} the MessageReceivedEvent was in.
  * <br>All {@link net.dv8tion.jda.api.requests.RestAction RestAction} returned by sending a response using these
  * methods automatically {@link net.dv8tion.jda.api.requests.RestAction#queue() RestAction#queue()}, and no further developer
  * input is required.
@@ -134,7 +134,7 @@ public class CommandEvent
      * contained by this CommandEvent.
      *
      * <p>This method is exposed for those who wish to use linked deletion but may require usage of
-     * {@link net.dv8tion.jda.api.entities.MessageChannel#sendMessage(MessageCreateData) MessageChannel#sendMessage()}
+     * {@link net.dv8tion.jda.api.entities.channel.middleman.MessageChannel#sendMessage(MessageCreateData) MessageChannel#sendMessage()}
      * or for other reasons cannot use the standard {@code reply()} methods.
      *
      * <p>If the Message provided is <b>not</b> from the bot (IE: {@link net.dv8tion.jda.api.entities.SelfUser SelfUser}),
@@ -358,7 +358,7 @@ public class CommandEvent
      * sending the response as a {@link net.dv8tion.jda.api.entities.Message Message}
      * automatically does {@link net.dv8tion.jda.api.requests.RestAction#queue() RestAction#queue()}.
      * 
-     * <p>This method uses {@link net.dv8tion.jda.api.entities.MessageChannel#sendFiles(FileUpload...) MessageChannel#sendFile(FileUpload...)}
+     * <p>This method uses {@link net.dv8tion.jda.api.entities.channel.middleman.MessageChannel#sendFiles(FileUpload...) MessageChannel#sendFile(FileUpload...)}
      * to send the File. For more information on what a bot may send using this, you may find the info in that method.
      * 
      * @param  file
@@ -379,7 +379,7 @@ public class CommandEvent
      * sending the response as a {@link net.dv8tion.jda.api.entities.Message Message}
      * automatically does {@link net.dv8tion.jda.api.requests.RestAction#queue() RestAction#queue()}.
      * 
-     * <p>This method uses {@link net.dv8tion.jda.api.entities.MessageChannel#sendFiles(FileUpload...) MessageChannel#sendFile(FileUpload...)}
+     * <p>This method uses {@link net.dv8tion.jda.api.entities.channel.middleman.MessageChannel#sendFiles(FileUpload...) MessageChannel#sendFile(FileUpload...)}
      * to send the File. For more information on what a bot may send using this, you may find the info in that method.
      * 
      * @param  message
@@ -447,7 +447,7 @@ public class CommandEvent
      * sending the response as a {@link net.dv8tion.jda.api.entities.Message Message}
      * automatically does {@link net.dv8tion.jda.api.requests.RestAction#queue() RestAction#queue()}.
      * 
-     * <p>This method uses {@link net.dv8tion.jda.api.entities.MessageChannel#sendFiles(FileUpload...) MessageChannel#sendFile(FileUpload...)}
+     * <p>This method uses {@link net.dv8tion.jda.api.entities.channel.middleman.MessageChannel#sendFiles(FileUpload...) MessageChannel#sendFile(FileUpload...)}
      * to send the File. For more information on what a bot may send using this, you may find the info in that method.
      * 
      * <p><b>NOTE:</b> This alternate String message can exceed the 2000 character cap, and will 
@@ -478,7 +478,7 @@ public class CommandEvent
 
     /**
      * Replies with a String message sent to the calling {@link net.dv8tion.jda.api.entities.User User}'s
-     * {@link net.dv8tion.jda.api.entities.PrivateChannel PrivateChannel}.
+     * {@link net.dv8tion.jda.api.entities.channel.concrete.PrivateChannel PrivateChannel}.
      *
      * <p>If the User to be Direct Messaged does not already have a PrivateChannel
      * open to send messages to, this method will automatically open one.
@@ -505,7 +505,7 @@ public class CommandEvent
 
     /**
      * Replies with a String message sent to the calling {@link net.dv8tion.jda.api.entities.User User}'s
-     * {@link net.dv8tion.jda.api.entities.PrivateChannel PrivateChannel}.
+     * {@link net.dv8tion.jda.api.entities.channel.concrete.PrivateChannel PrivateChannel}.
      *
      * <p>If the User to be Direct Messaged does not already have a PrivateChannel
      * open to send messages to, this method will automatically open one.
@@ -535,7 +535,7 @@ public class CommandEvent
 
     /**
      * Replies with a String message sent to the calling {@link net.dv8tion.jda.api.entities.User User}'s
-     * {@link net.dv8tion.jda.api.entities.PrivateChannel PrivateChannel}.
+     * {@link net.dv8tion.jda.api.entities.channel.concrete.PrivateChannel PrivateChannel}.
      *
      * <p>If the User to be Direct Messaged does not already have a PrivateChannel
      * open to send messages to, this method will automatically open one.
@@ -567,7 +567,7 @@ public class CommandEvent
 
     /**
      * Replies with a {@link net.dv8tion.jda.api.entities.MessageEmbed MessageEmbed} sent to the
-     * calling {@link net.dv8tion.jda.api.entities.User User}'s {@link net.dv8tion.jda.api.entities.PrivateChannel PrivateChannel}.
+     * calling {@link net.dv8tion.jda.api.entities.User User}'s {@link net.dv8tion.jda.api.entities.channel.concrete.PrivateChannel PrivateChannel}.
      *
      * <p>If the User to be Direct Messaged does not already have a PrivateChannel
      * open to send messages to, this method will automatically open one.
@@ -591,7 +591,7 @@ public class CommandEvent
 
     /**
      * Replies with a {@link net.dv8tion.jda.api.entities.MessageEmbed MessageEmbed} sent to the
-     * calling {@link net.dv8tion.jda.api.entities.User User}'s {@link net.dv8tion.jda.api.entities.PrivateChannel PrivateChannel}.
+     * calling {@link net.dv8tion.jda.api.entities.User User}'s {@link net.dv8tion.jda.api.entities.channel.concrete.PrivateChannel PrivateChannel}.
      *
      * <p>If the User to be Direct Messaged does not already have a PrivateChannel
      * open to send messages to, this method will automatically open one.
@@ -618,7 +618,7 @@ public class CommandEvent
 
     /**
      * Replies with a {@link net.dv8tion.jda.api.entities.MessageEmbed MessageEmbed} sent to the
-     * calling {@link net.dv8tion.jda.api.entities.User User}'s {@link net.dv8tion.jda.api.entities.PrivateChannel PrivateChannel}.
+     * calling {@link net.dv8tion.jda.api.entities.User User}'s {@link net.dv8tion.jda.api.entities.channel.concrete.PrivateChannel PrivateChannel}.
      *
      * <p>If the User to be Direct Messaged does not already have a PrivateChannel
      * open to send messages to, this method will automatically open one.
@@ -647,7 +647,7 @@ public class CommandEvent
 
     /**
      * Replies with a {@link net.dv8tion.jda.api.entities.Message Message} sent to the
-     * calling {@link net.dv8tion.jda.api.entities.User User}'s {@link net.dv8tion.jda.api.entities.PrivateChannel PrivateChannel}.
+     * calling {@link net.dv8tion.jda.api.entities.User User}'s {@link net.dv8tion.jda.api.entities.channel.concrete.PrivateChannel PrivateChannel}.
      *
      * <p>If the User to be Direct Messaged does not already have a PrivateChannel
      * open to send messages to, this method will automatically open one.
@@ -671,7 +671,7 @@ public class CommandEvent
 
     /**
      * Replies with a {@link net.dv8tion.jda.api.entities.Message Message} sent to the
-     * calling {@link net.dv8tion.jda.api.entities.User User}'s {@link net.dv8tion.jda.api.entities.PrivateChannel PrivateChannel}.
+     * calling {@link net.dv8tion.jda.api.entities.User User}'s {@link net.dv8tion.jda.api.entities.channel.concrete.PrivateChannel PrivateChannel}.
      *
      * <p>If the User to be Direct Messaged does not already have a PrivateChannel
      * open to send messages to, this method will automatically open one.
@@ -698,7 +698,7 @@ public class CommandEvent
 
     /**
      * Replies with a {@link net.dv8tion.jda.api.entities.Message Message} sent to the
-     * calling {@link net.dv8tion.jda.api.entities.User User}'s {@link net.dv8tion.jda.api.entities.PrivateChannel PrivateChannel}.
+     * calling {@link net.dv8tion.jda.api.entities.User User}'s {@link net.dv8tion.jda.api.entities.channel.concrete.PrivateChannel PrivateChannel}.
      *
      * <p>If the User to be Direct Messaged does not already have a PrivateChannel
      * open to send messages to, this method will automatically open one.
@@ -728,7 +728,7 @@ public class CommandEvent
     /**
      * Replies with a String message and a {@link java.io.File} with the provided name, or a default 
      * name if left null, and sent to the calling {@link net.dv8tion.jda.api.entities.User User}'s
-     * {@link net.dv8tion.jda.api.entities.PrivateChannel PrivateChannel}.
+     * {@link net.dv8tion.jda.api.entities.channel.concrete.PrivateChannel PrivateChannel}.
      * 
      * <p>If the User to be Direct Messaged does not already have a PrivateChannel
      * open to send messages to, this method will automatically open one.
@@ -737,7 +737,7 @@ public class CommandEvent
      * sending the response as a {@link net.dv8tion.jda.api.entities.Message Message}
      * automatically does {@link net.dv8tion.jda.api.requests.RestAction#queue() RestAction#queue()}.
      * 
-     * <p>This method uses {@link net.dv8tion.jda.api.entities.MessageChannel#sendFiles(FileUpload...) MessageChannel#sendFile(FileUpload...)}
+     * <p>This method uses {@link net.dv8tion.jda.api.entities.channel.middleman.MessageChannel#sendFiles(FileUpload...) MessageChannel#sendFile(FileUpload...)}
      * to send the File. For more information on what a bot may send using this, you may find the info in that method.
      * 
      * @param  message
@@ -1087,7 +1087,7 @@ public class CommandEvent
     }
     
     /**
-     * Gets the {@link net.dv8tion.jda.api.entities.MessageChannel MessageChannel} that the CommandEvent
+     * Gets the {@link net.dv8tion.jda.api.entities.channel.middleman.MessageChannel MessageChannel} that the CommandEvent
      * was triggered on.
      * 
      * @return The MessageChannel that the CommandEvent was triggered on
@@ -1098,8 +1098,8 @@ public class CommandEvent
     }
     
     /**
-     * Gets the {@link net.dv8tion.jda.api.entities.ChannelType ChannelType} of the
-     * {@link net.dv8tion.jda.api.entities.MessageChannel MessageChannel} that the CommandEvent was triggered on.
+     * Gets the {@link net.dv8tion.jda.api.entities.channel.ChannelType ChannelType} of the
+     * {@link net.dv8tion.jda.api.entities.channel.middleman.MessageChannel MessageChannel} that the CommandEvent was triggered on.
      * 
      * @return The ChannelType of the MessageChannel that this CommandEvent was triggered on
      */
@@ -1152,7 +1152,7 @@ public class CommandEvent
     }
     
     /**
-     * Gets the {@link net.dv8tion.jda.api.entities.PrivateChannel PrivateChannel} that this CommandEvent
+     * Gets the {@link net.dv8tion.jda.api.entities.channel.concrete.PrivateChannel PrivateChannel} that this CommandEvent
      * may have taken place on, or {@code null} if it didn't happen on a PrivateChannel.
      * 
      * @return The PrivateChannel that this CommandEvent may have taken place on, or null
@@ -1174,7 +1174,7 @@ public class CommandEvent
     }
     
     /**
-     * Gets the {@link net.dv8tion.jda.api.entities.TextChannel TextChannel} that this CommandEvent
+     * Gets the {@link net.dv8tion.jda.api.entities.channel.concrete.TextChannel TextChannel} that this CommandEvent
      * may have taken place on, or {@code null} if it didn't happen on a TextChannel.
      * 
      * @return The TextChannel this CommandEvent may have taken place on, or null
@@ -1198,13 +1198,13 @@ public class CommandEvent
     }
 
     /**
-     * Compares a provided {@link net.dv8tion.jda.api.entities.ChannelType ChannelType} with the one this
+     * Compares a provided {@link net.dv8tion.jda.api.entities.channel.ChannelType ChannelType} with the one this
      * CommandEvent occurred on, returning {@code true} if they are the same ChannelType.
      * 
      * @param  channelType
      *         The ChannelType to compare
      *         
-     * @return {@code true} if the CommandEvent originated from a {@link net.dv8tion.jda.api.entities.MessageChannel}
+     * @return {@code true} if the CommandEvent originated from a {@link net.dv8tion.jda.api.entities.channel.middleman.MessageChannel}
      *         of the provided ChannelType, otherwise {@code false}.
      */
     public boolean isFromType(ChannelType channelType)

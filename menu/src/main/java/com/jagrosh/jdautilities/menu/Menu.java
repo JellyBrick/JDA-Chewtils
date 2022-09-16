@@ -32,7 +32,7 @@ import javax.annotation.Nullable;
  * or key-phrases.
  *
  * <p>Classes extending this are able to take a provided {@link net.dv8tion.jda.api.entities.Message Message}
- * or {@link net.dv8tion.jda.api.entities.MessageChannel MessageChannel} and display a visualized "Menu"
+ * or {@link net.dv8tion.jda.api.entities.channel.middleman.MessageChannel MessageChannel} and display a visualized "Menu"
  * as or in it.
  *
  * <p>The JDA-Utilities default implementations of this superclass typically handle input through
@@ -72,7 +72,7 @@ public abstract class Menu
     }
     
     /**
-     * Displays this Menu in a {@link net.dv8tion.jda.api.entities.MessageChannel MessageChannel}.
+     * Displays this Menu in a {@link net.dv8tion.jda.api.entities.channel.middleman.MessageChannel MessageChannel}.
      * 
      * @param  channel
      *         The MessageChannel to display this Menu in
