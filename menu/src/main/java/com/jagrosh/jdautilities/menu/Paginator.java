@@ -15,15 +15,6 @@
  */
 package com.jagrosh.jdautilities.menu;
 
-import java.awt.Color;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-import java.util.function.BiFunction;
-import java.util.function.Consumer;
-
 import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Message;
@@ -40,6 +31,15 @@ import net.dv8tion.jda.api.utils.messages.MessageCreateData;
 import net.dv8tion.jda.api.utils.messages.MessageEditBuilder;
 import net.dv8tion.jda.api.utils.messages.MessageEditData;
 import net.dv8tion.jda.internal.utils.Checks;
+
+import java.awt.Color;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+import java.util.function.BiFunction;
+import java.util.function.Consumer;
 
 /**
  * A {@link com.jagrosh.jdautilities.menu.Menu Menu} implementation that paginates a
@@ -109,7 +109,7 @@ public class Paginator extends Menu
 
     /**
      * Begins pagination on page 1 as a new {@link net.dv8tion.jda.api.entities.Message Message}
-     * in the provided {@link net.dv8tion.jda.api.entities.channel.middleman.MessageChannel MessageChannel}.
+     * in the provided {@link MessageChannel}.
      *
      * <p>Starting on another page is available via {@link
      * Paginator#paginate(MessageChannel, int)
@@ -142,7 +142,7 @@ public class Paginator extends Menu
 
     /**
      * Begins pagination as a new {@link net.dv8tion.jda.api.entities.Message Message}
-     * in the provided {@link net.dv8tion.jda.api.entities.channel.middleman.MessageChannel MessageChannel}, starting
+     * in the provided {@link MessageChannel}, starting
      * on whatever page number is provided.
      *
      * @param  channel

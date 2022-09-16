@@ -82,7 +82,7 @@ public class EmbedPaginator extends Menu{
 
     /**
      * Begins pagination on page 1 as a new {@link net.dv8tion.jda.api.entities.Message Message}
-     * in the provided {@link net.dv8tion.jda.api.entities.channel.middleman.MessageChannel MessageChannel}.
+     * in the provided {@link MessageChannel}.
      *
      * @param  channel
      *         The MessageChannel to send the new Message to
@@ -108,7 +108,7 @@ public class EmbedPaginator extends Menu{
 
     /**
      * Begins pagination as a new {@link net.dv8tion.jda.api.entities.Message Message}
-     * in the provided {@link net.dv8tion.jda.api.entities.channel.middleman.MessageChannel MessageChannel}, starting
+     * in the provided {@link MessageChannel}, starting
      * on whatever page number is provided.
      *
      * @param  channel

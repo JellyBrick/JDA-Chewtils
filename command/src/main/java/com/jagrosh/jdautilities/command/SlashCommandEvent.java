@@ -354,7 +354,7 @@ public class SlashCommandEvent extends SlashCommandInteractionEvent {
     }
 
     /**
-     * Gets the {@link net.dv8tion.jda.api.entities.channel.concrete.TextChannel TextChannel} that this CommandEvent
+     * Gets the {@link TextChannel} that this CommandEvent
      * may have taken place on, or {@code null} if it didn't happen on a TextChannel.
      *
      * @return The TextChannel this CommandEvent may have taken place on, or null
