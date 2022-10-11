@@ -18,9 +18,9 @@ package com.jagrosh.jdautilities.menu;
 import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Message;
-import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.entities.User;
+import net.dv8tion.jda.api.entities.channel.middleman.MessageChannel;
 import net.dv8tion.jda.api.entities.emoji.Emoji;
 import net.dv8tion.jda.api.events.message.react.MessageReactionAddEvent;
 import net.dv8tion.jda.api.requests.RestAction;
@@ -66,7 +66,7 @@ public class ButtonMenu extends Menu
 
     /**
      * Shows the ButtonMenu as a new {@link net.dv8tion.jda.api.entities.Message Message}
-     * in the provided {@link net.dv8tion.jda.api.entities.MessageChannel MessageChannel}.
+     * in the provided {@link MessageChannel}.
      *
      * @param  channel
      *         The MessageChannel to send the new Message to
