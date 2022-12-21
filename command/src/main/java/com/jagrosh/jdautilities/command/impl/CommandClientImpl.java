@@ -923,7 +923,7 @@ public class CommandClientImpl implements CommandClient, EventListener
     private void onSlashCommand(SlashCommandInteractionEvent event)
     {
         // this will be null if it's not a command
-        final SlashCommand command = findSlashCommand(event.getCommandPath());
+        final SlashCommand command = findSlashCommand(event.getFullCommandName());
 
         // Wrap the event in a SlashCommandEvent
         final SlashCommandEvent commandEvent = new SlashCommandEvent(event, this);
@@ -941,7 +941,7 @@ public class CommandClientImpl implements CommandClient, EventListener
     private void onCommandAutoComplete(CommandAutoCompleteInteractionEvent event)
     {
         // this will be null if it's not a command
-        final SlashCommand command = findSlashCommand(event.getCommandPath());
+        final SlashCommand command = findSlashCommand(event.getFullCommandName());
 
         if(command != null)
         {
@@ -951,7 +951,7 @@ public class CommandClientImpl implements CommandClient, EventListener
 
     private SlashCommand findSlashCommand(String path)
     {
-        String[] parts = path.split("/");
+        String[] parts = path.split(" ");
 
         final SlashCommand command; // this will be null if it's not a command
         synchronized(slashCommandIndex)
