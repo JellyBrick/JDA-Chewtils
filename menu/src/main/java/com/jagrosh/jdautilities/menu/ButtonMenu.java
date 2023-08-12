@@ -42,7 +42,9 @@ import java.util.function.Consumer;
  * the menu reactions corresponding to each button.
  *
  * @author John Grosh
+ * @deprecated In favor of ButtonTextMenu
  */
+@Deprecated
 public class ButtonMenu extends Menu
 {
     private final Color color;

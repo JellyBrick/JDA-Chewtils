@@ -46,7 +46,9 @@ import java.util.function.Function;
  * using reactions and make selections.
  *
  * @author John Grosh
+ * @deprecated In favor of native Select Menus in Discord and JDA.
  */
+@Deprecated
 public class SelectionDialog extends Menu
 {
     private final List<String> choices;
