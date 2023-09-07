@@ -54,7 +54,9 @@ import net.dv8tion.jda.internal.utils.Checks;
  * and {@link OrderedMenu.Builder#setCancel(Consumer)} methods.
  *
  * @author John Grosh
+ * @deprecated In favor of Select Menus native to Discord and JDA.
  */
+@Deprecated
 public class OrderedMenu extends Menu
 {
     private final Color color;
